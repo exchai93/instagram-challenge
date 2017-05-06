@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
 
   def index
-    raise 'hello'
+    'hello'
   end
 end
