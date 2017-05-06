@@ -5,7 +5,7 @@ feature 'Photos' do
     scenario 'should display a prompt to post a photo' do
       visit '/photos'
       expect(page).to have_content 'No photos yet'
-      expect(page).to have_link 'Post a restaurant'
+      expect(page).to have_link 'Post a photo'
     end
   end
 
@@ -28,9 +28,19 @@ feature 'Photos' do
       click_button 'Post'
       expect(page).to have_content 'My first photo'
       expect(current_path).to eq '/photos'
-
     end
   end
+
+  context 'viewing photos' do
+    let!(:photo){ Photo.create(caption:'My first photo') }
+
+    scenario 'lets a user view photos' do
+     visit '/photos'
+     expect(page).to have_content 'My first photo'
+     expect(current_path).to eq "/photos/#{photo.id}"
+    end
+  end
+
 
 
 end
