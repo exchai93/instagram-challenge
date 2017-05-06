@@ -1,2 +1,7 @@
-No photos yet
+- if @photos.any?
+  - @photos each do |photo|
+    %= photo.name
+  - else
+    % No photos yet
+
 %a(href='#') Post a photo
