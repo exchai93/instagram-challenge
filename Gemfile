@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'haml'
+gem 'html2haml'
+gem 'html2slim'
 gem 'spring-commands-rspec'
 gem 'carrierwave', '~> 1.0'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
