@@ -24,7 +24,7 @@ feature 'Photos' do
     scenario 'prompts user to choose a photo from their library, then displays the new photo' do
       visit '/photos'
       click_link 'Post a photo'
-      fill_in 'Caption', with 'My first photo'
+      fill_in 'Caption', with: 'My first photo'
       click_button 'Post'
       expect(page).to have_content 'My first photo'
       expect(current_path).to eq '/photos'
